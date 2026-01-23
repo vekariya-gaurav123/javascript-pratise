@@ -41,8 +41,74 @@ while (d <= 10) {
 }
 
 // make it true loops
+// let k = 20;
+// while (k == 20) {
+//     console.log(k);
+//     break;
+// }
+
+// let a = 60;
+// while (a <= 79){
+//   console.log(a);
+//     a++;
+// }
+
+// let c = 15;
+// while (c <= 20){
+//   console.log(c);
+//     c++;
+// }
+
+// let d = "Hello";
+// let count = 0;
+// while (count < 5){
+//   console.log(d);
+//     count++;
+// }
+
+// let f = 50;
+// while (f >= 40){
+//   console.log(f);
+//     f--;
+// }
+
+// let q = 60;
+// while (q <= 50){
+//   console.log(q);
+//     q--;
+// }// make it true loops
 // let k = 50;
 // while (k = 20) {
 //     console.log(k);
 //     k++
+// }
+
+// let a = 60;
+// while (k <= 20){
+//   console.log(a);
+//     a++;
+// }
+
+// let c = 30;
+// while (c <= 20){
+//   console.log(c);
+//     a++;
+// }
+
+// let d = "Hello";
+// while (d >= 20){
+//   console.log(d);
+//     d++;
+// }
+
+// let f = 50;
+// while (f <= 60){
+//   console.log(f);
+//     f--;
+// }
+
+// let q = 50;
+// while (q <= 60){
+//   console.log(q);
+//     --q;
 // }
