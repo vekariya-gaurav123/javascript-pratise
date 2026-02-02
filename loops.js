@@ -19,7 +19,7 @@ for(let k = 9; k >= -1; k++) {
 
 for(let j = 1; j <= 10; j++) {
     // document.writeIn("Hello");
-    console.log("Hello");
+    console.log("Hello"); 
 }
 
 for (let i = 1; i <= 3; i++) {
@@ -36,7 +36,7 @@ for (let i = 1; i <= 3; i++) {
 // }
 let d = 1;
 while (d <= 10) {
-    console.log("While Loop : ", d);
+  console.log("While Loop : ", d);
     d++;
 }
 
@@ -59,17 +59,19 @@ while (d <= 10) {
 //     c++;
 // }
 
-// let d = "Hello";
-// let count = 0;
-// while (count < 5){
-//   console.log(d);
-//     count++;
+//let d = "Hello";
+//let count = 0;
+
+//while (count < 5) {
+  //console.log(d);
+ // count++;
 // }
+
 
 // let f = 50;
 // while (f >= 40){
 //   console.log(f);
-//     f--;
+//     f--; 
 // }
 
 // let q = 60;
@@ -112,3 +114,55 @@ while (d <= 10) {
 //   console.log(q);
 //     --q;
 // }
+
+// do while loop
+// do {} while {end};
+// start
+// do{
+// code
+// change}
+// while(end);
+let j = 12; // start
+do {
+    console.log("do while loop:",j); // code
+    j++; // change (condition)
+} while (j < 20); // while check after executing code block {end}
+
+// // break
+for (let k = 1; k <= 201; k++) {
+    console.log("Loop with break",k);
+    if(k == "30") {
+        break;
+    }
+}
+
+// // continue
+for (let a = 1; a <= 10; a++) {
+    if(a === 5) {
+        continue;
+    }
+    console.log(a);
+}
+
+// pratise for do while loop
+let i = 15; //start
+do {
+    console.log("do while loop:",i); // code
+    i++;
+} while (i < 30);
+
+// pratise for break loop statement
+for (let i = 1; i<= 201; i++) {
+    console.logI("Loop with break",i);
+    if(i == "45") {
+        break;
+    }
+}
+
+// pratise for continue statement
+for (let k = 1; k <= 10; k++) {
+    if(k === 5) {
+        continue;
+    }
+    console.log(k);
+}
