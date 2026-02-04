@@ -404,3 +404,653 @@ why:Because paper covers rock.
 Output:case3
 scissors vs paper → scissors
 why:Because scissors cut paper.
+
+//pratise
+/*# JavaScript Function Examples – Answers, Outputs & Explanations
+
+---
+
+## Example 1: Function Declaration vs Function Expression (Hoisting)
+
+**Answer:**
+
+* **Function Declaration** is fully hoisted.
+* **Function Expression** is not fully hoisted.
+**Output:**
+No direct output (concept-based question)
+
+**Why:**
+Function declarations are stored completely in memory during the hoisting phase, while function expressions only hoist the variable name (initialized as `undefined`).
+
+---
+## Example 2: Hoisting in Action
+```js
+greet();
+function greet(){
+  console.log("Hello!");
+}
+```**Output:**
+```
+Hello!
+```
+**Answer:** ✅ No Error
+
+**Why:**
+`greet` is a function declaration, so it is hoisted entirely and can be called before its definition.
+
+---
+## Example 3: Convert Normal Function to Arrow Function
+```js
+function add(a, b){
+  return a + b;
+}
+```
+**Answer:**
+
+```js
+const add = (a, b) => a + b;
+```
+**Output:**
+```
+add(2,3) → 5
+```
+**Why:**
+Arrow functions provide shorter syntax and implicit return for single expressions.
+## Example 4: Parameters vs Arguments
+
+```js
+function welcome(name){
+  console.log("Welcome " + name);
+}
+welcome("user");
+```
+**Output:**
+
+```
+Welcome user
+```
+**Answer:**
+
+* **Parameter:** `name`
+* **Argument:** `"user"`
+
+**Why:**
+Parameters are variables in function definitions, arguments are actual values passed to them.
+
+---
+
+## Example 5: Number of Parameters and Arguments
+
+```js
+function temp(a, b, c){
+  console.log(a, b, c);
+}
+temp(1, 2);
+```
+
+**Output:**
+
+```
+1 2 undefined
+```
+
+**Answer:**
+
+* Parameters: `3`
+* Arguments: `2`
+
+**Why:**
+Missing arguments default to `undefined`. JavaScript does not throw an error.
+
+---
+
+## Example 6: Default Parameters
+
+```js
+function temp_user(name = "Guest"){
+  console.log("Hello " + name);
+}
+temp_user();
+```
+
+**Output:**
+
+```
+Hello Guest
+```
+
+**Answer:** ✅ No Error
+
+**Why:**
+Default parameter value is used when no argument is provided.
+
+---
+## Example 7: Rest Operator (`...`)
+
+```js
+function number(...numbers){
+  console.log(numbers);
+}
+number(1, 2, 3, 4, 5);
+```
+
+**Output:**
+
+```
+[1, 2, 3, 4, 5]
+```
+
+**Answer:** ✅ No Error
+
+**Why:**
+The rest operator gathers all passed arguments into an array.
+
+---
+
+## Example 8: Rest Parameters – Total Calculation
+
+### ❌ First Function
+
+```js
+for(let i = 0; i <= scores.length; i++){
+  total += scores[i];
+}
+```
+
+**Output:**
+
+```
+NaN
+```
+**Why:**
+The loop runs one extra time and adds `undefined`, causing `NaN`.
+
+---
+### ✅ Second Function
+
+```js
+scores.forEach(function(val){
+  total += val;
+});
+```
+**Output:**
+
+```
+150
+```
+
+**Why:**
+`forEach` iterates only over valid array elements.
+
+---
+
+## Example 9: Early Return Fix
+
+```js
+function checkAge(age){
+  if(age < 18){
+    console.log("Too Young");
+    return;
+  }
+  console.log("Access Granted");
+}
+```
+
+**Output:**
+
+```
+checkAge(16) → Too Young
+checkAge(21) → Access Granted
+```
+
+**Why:**
+Early return simplifies logic and improves readability.
+
+---
+
+## Example 10: Return Value
+
+```js
+function f(){ return; }
+```
+
+**Output:**
+
+```
+undefined
+```
+
+**Answer:** `undefined`
+
+**Why:**
+A `return` without a value automatically returns `undefined`.
+
+---
+
+## Example 11: Functions as First-Class Citizens
+
+**Answer:**
+Functions are treated like any other variable.
+
+**Output:**
+No direct output (concept-based)
+
+**Why:**
+In JavaScript, functions can be stored in variables, passed as arguments, returned from other functions, and stored in data structures.
+
+---
+
+## Example 12: Assign Function to Variable
+
+```js
+let a = function(){
+  console.log("Hello");
+}
+a();
+```
+
+**Output:**
+
+```
+Hello
+```
+
+**Answer:** ✅ Valid
+
+**Why:**
+Functions can be assigned to variables and invoked using the variable name.
+
+---
+
+## Example 13: Passing Function into Another Function
+
+```js
+function abcd(val){
+  val();
+}
+
+abcd(function(){
+  console.log("Hello");
+});
+```
+
+**Output:**
+
+```
+Hello
+```
+
+**Answer:** ✅ Valid
+
+**Why:**
+A function is passed as an argument and executed inside another function. This is possible because functions are first-class citizens.
+
+---
+
+## Example 14: Higher-Order Function
+
+**Answer:**
+A higher-order function is a function that either:
+
+* Takes another function as an argument, or
+* Returns a function
+
+**Output:**
+No direct output (concept-based)
+
+**Why:**
+This allows abstraction, reusability, and functional programming patterns.
+
+---
+
+## Example 16: Pure or Impure Function
+
+```js
+let total = 5;
+function num(num){
+  total += num;
+}
+num(3);
+```
+
+**Output:**
+
+```
+No direct output
+```
+
+**Answer:** ❌ Impure Function
+
+**Why:**
+The function modifies an external variable (`total`). Its output depends on external state.
+
+---
+
+## Example 17: Convert to Pure Function
+
+```js
+function num(total, value){
+  return total + value;
+}
+num(5, 3);
+```
+
+**Output:**
+
+```
+8
+```
+
+**Answer:** ✅ Pure Function
+
+**Why:**
+It does not modify external data and always returns the same output for the same input.
+
+---
+
+## Example 18: Closure
+
+**Answer:**
+A closure is created when a function remembers variables from its outer scope even after the outer function has finished executing.
+
+**Example:**
+
+```js
+function outer(){
+  let x = 10;
+  return function(){
+    console.log(x);
+  }
+}
+```
+
+**Why:**
+The inner function retains access to `x` through closure.
+
+---
+
+## Example 19: Closure Output
+
+```js
+function outer(){
+  let count = 0;
+  return function(){
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outer();
+counter();
+counter();
+```
+
+**Output:**
+
+```
+1
+2
+```
+
+**Answer:** ✅ No Error
+
+**Why:**
+The `count` variable is preserved in closure and updated on each function call.
+
+## Example 20: IIFE Conversion
+
+```js
+(function init(){
+  console.log("Initialized");
+})();
+```
+
+**Output:**
+
+```
+Initialized
+```
+
+**Why:**
+IIFE executes immediately and avoids polluting the global scope.
+
+---
+
+## Example 21: Use of IIFE
+
+```js
+let fun = (function(){
+  let score = 0;
+  return{
+    getScore: function(){
+      console.log(score);
+    },
+    setScore: function(val){
+      score = val;
+    }
+  }
+})();
+```
+
+**Output:**
+
+```
+fun.getScore(); → 0
+fun.setScore(10);
+fun.getScore(); → 10
+```
+
+**Answer:**
+Encapsulation and data privacy.
+
+**Why:**
+IIFE creates a private scope where variables cannot be accessed directly.
+
+---
+
+## Example 22: Function Expression Hoisting
+
+```js
+temp_var();
+var temp_var = function(){
+  console.log("Hello");
+}
+```
+
+**Output:**
+
+```
+TypeError: temp_var is not a function
+```
+
+**Why:**
+Only the variable is hoisted, not the function assignment.
+
+---
+
+## Example 23: Function Declaration Hoisting
+
+```js
+temp_var();
+function temp_var(){
+  console.log("Hello");
+}
+```
+
+**Output:**
+
+```
+Hello
+```
+
+**Why:**
+Function declarations are fully hoisted.
+
+---
+
+ **Complete Single File with Answers, Outputs & Explanations**
+*/
+
+Exerice(Date:04-02-2026)
+Example:1(push)
+let tasks = ['Wake up', 'Brush teeth'];
+tasks.push('Buy milk');
+console.log(tasks);
+Output: ['Wake up', 'Brush teeth', 'Buy milk']
+why :push() adds an element at the end.
+
+Example : 2 (pop)
+let notifications = ['Email', 'Message', 'Reminder'];
+notifications.pop();
+console.log(notifications);
+Output: ['Email', 'Message']
+Why:pop() removes the last element.
+
+Example:3 (shift)
+let customers = ['Customer1', 'Customer2', 'Customer3'];
+customers.shift();
+console.log(customers);
+Output:['Customer2', 'Customer3']
+Why:shift() removes the first element.
+
+Example:4 (unshift)
+let playlist = ['Song B', 'Song C'];
+playlist.unshift('Song A');
+console.log(playlist);
+Output:['Song A', 'Song B', 'Song C']
+why:unshift() adds element at the beginning.
+
+Example:5 (splice)
+let students = ['Mike', 'Alex', 'Emma', 'Sophia'];
+students.splice(1, 1, 'John', 'Sara');
+console.log(students);
+Output: ['Mike', 'John', 'Sara', 'Emma', 'Sophia']
+why:splice() removes and inserts at same index.
+
+Example:6(splice)
+let menu = ['Burger', 'Pizza', 'Pasta', 'Salad'];
+menu.splice(1, 2);
+console.log(menu);
+Output:['Burger', 'Salad']
+why:Removes 2 items starting from index 1.
+
+Example:7(slice)
+let days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+let weekend = days.slice(5);
+console.log(weekend);
+Output:['Saturday', 'Sunday']
+why:slice() copies elements into new array.
+
+Example:8(reverse)
+let levels = ['Easy', 'Medium', 'Hard'];
+levels.reverse();
+console.log(levels);
+Output:['Hard', 'Medium', 'Easy']
+why:reverse() reverses array order.
+
+Example:9(sort)
+let scores = [45, 12, 78, 34, 89];
+scores.sort((a, b) => a - b);
+console.log(scores);
+Output:[12, 34, 45, 78, 89]
+why:Compare function sorts numbers correctly.
+
+Example:10(sort number)
+let prices = [199, 49, 999, 299, 149];
+prices.sort((a, b) => a - b);
+console.log(prices);
+Output: [49, 149, 199, 299, 999]
+why:Numeric ascending sort
+
+Example:11(slice vs. splice)
+let products = ['Laptop', 'Phone', 'Tablet', 'Monitor', 'Keyboard'];
+let newProducts = products.slice(0, 3);
+console.log(newProducts);
+console.log(products);
+Output:['Laptop', 'Phone', 'Tablet']
+['Laptop', 'Phone', 'Tablet', 'Monitor', 'Keyboard']
+why :slice() does not change original array.
+
+Example:12(splice complex)
+let colors = ['Red', 'Green', 'Blue', 'Yellow'];
+colors.splice(2, 1, 'Purple', 'Orange');
+console.log(colors);
+Output:['Red', 'Green', 'Purple', 'Orange', 'Yellow']
+why:Replaces one element with two new ones.
+
+Example:13(reverse + push)
+let steps = ['Step 1', 'Step 2', 'Step 3'];
+steps.reverse();
+steps.push('Final Step');
+console.log(steps);
+Output:['Step 3', 'Step 2', 'Step 1', 'Final Step']
+why:Reverse first, then add at end.
+
+Example:14(sort string)
+let names = ['alice', 'Bob', 'charlie', 'David'];
+names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+console.log(names);
+Output:['alice', 'Bob', 'charlie', 'David']
+why:Case-insensitive alphabetical sorting.
+
+Example:15(combination question)
+let movies = ['Avatar', 'Titanic', 'Gladiator'];
+movies.push('Inception');
+movies.shift();
+movies.sort();
+console.log(movies);
+Output:['Gladiator', 'Inception', 'Titanic']
+why:Add → remove first → sort alphabetically
+
+Example:16(splice return value)
+let nums1 = [1, 2, 3, 4];
+let removed = nums1.splice(1, 2);
+console.log(removed);
+console.log(nums1);
+Output:[2, 3]
+[1, 4]
+why:splice() returns removed elements.
+
+Example:17(slice immutability)
+let nums2 = [10, 20, 30, 40];
+let result = nums2.slice(1, 3);
+console.log(result);
+console.log(nums2);
+Output:[20, 30]
+[10, 20, 30, 40]
+why:Original array remains unchanged.
+
+Example:19(reverse mutation)
+let letters = ['a', 'b', 'c'];
+let reversedLetters = letters.reverse();
+console.log(reversedLetters);
+console.log(letters);
+Output:['c', 'b', 'a']
+['c', 'b', 'a']
+why: reverse() mutates original array.
+
+Example:21(splice edge case)
+let arr = ['x', 'y', 'z'];
+arr.splice(1, 0, 'new');
+console.log(arr);
+Output:['x', 'new', 'y', 'z']
+why:deleteCount 0 only inserts.
+
+Example:23(slice negetive index)
+let values = [100, 200, 300, 400, 500];
+let sliced = values.slice(-3, -1);
+console.log(sliced);
+Output:[300, 400]
+why:Negative index counts from end.
+
+Example:24(splice vs. slice)
+a) splice() → when original array must change
+b) slice()  → when original array must stay same
+Why: splice mutates, slice does not.
+
+Example:25(chained methods)
+let arr2 = [1, 2, 3];
+arr2.push(arr2.shift());
+console.log(arr2);
+Output:[2, 3, 1]
+why:First element moved to end.
