@@ -30,3 +30,16 @@ colorBtn.addEventListener("click", () => {
         card.style.backgroundColor = "red";
     }
 });
+
+// input
+// how to know which is typed?
+let inp = document.querySelector("input");
+
+inp.addEventListener("input", (dets) => {
+    // console.log(dots);
+    if(dets.data !== null) {
+        console.log(dets.data);
+    }
+});
+
+// change -- when you change elements state
