@@ -1054,3 +1054,508 @@ arr2.push(arr2.shift());
 console.log(arr2);
 Output:[2, 3, 1]
 why:First element moved to end.
+
+
+# JavaScript Interview Questions – Answers
+
+---
+
+## 🟢 BEGINNER LEVEL (1–20)
+
+### Q1. Variables
+
+`var` → Function scoped, can be re-declared and updated.
+`let` → Block scoped, can be updated but not re-declared in same scope.
+`const` → Block scoped, cannot be updated or re-declared.
+
+---
+
+### Q2. Data Types
+
+Primitive data types:
+
+* string
+* number
+* boolean
+* undefined
+* null
+* bigint
+* symbol
+
+---
+
+### Q3. Type Checking
+
+Using `typeof` operator.
+
+```js
+console.log(typeof 5); // "number"
+```
+
+---
+
+### Q4. Operators
+
+`==` → Compares values only (type coercion happens).
+`===` → Compares value and type (strict equality).
+
+---
+
+### Q5. Arithmetic Operators
+
+```js
+let x = 10;
+console.log(x + 5 * 2);
+```
+
+Output:
+
+```
+20
+```
+
+---
+
+### Q6. String Concatenation
+
+```js
+console.log('5' + 2);
+```
+
+Output:
+
+```
+"52"
+```
+
+---
+
+### Q7. Boolean Logic
+
+```js
+console.log(true && false);
+```
+
+Output:
+
+```
+false
+```
+
+---
+
+### Q8. Functions
+
+A function is a reusable block of code used to perform a specific task.
+
+---
+
+### Q9. Function Call
+
+```js
+function add(a, b) {
+  return a + b;
+}
+add(2, 3);
+```
+
+Output:
+
+```
+5
+```
+
+---
+
+### Q10. Arrays
+
+```js
+const arr = [1, 2, 3];
+```
+
+---
+
+### Q11. Array Access
+
+```js
+const arr = [10, 20, 30];
+console.log(arr[1]);
+```
+
+Output:
+
+```
+20
+```
+
+---
+
+### Q12. Objects
+
+An object is a collection of key-value pairs.
+
+---
+
+### Q13. Object Access
+
+```js
+const user = { name: 'A', age: 20 };
+console.log(user.age);
+```
+
+Output:
+
+```
+20
+```
+
+---
+
+### Q14. Control Flow
+
+An `if` statement executes code when a condition is true.
+
+---
+
+### Q15. Condition Check
+
+```js
+let x = 5;
+if (x > 3) console.log('Yes');
+```
+
+Output:
+
+```
+Yes
+```
+
+---
+
+### Q16. Loops
+
+A loop repeats a block of code until a condition is met.
+
+---
+
+### Q17. for Loop
+
+```js
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+```
+
+Output:
+
+```
+0
+1
+2
+```
+
+---
+
+### Q18. while Loop
+
+Use a `while` loop when the number of iterations is unknown and depends on a condition.
+
+---
+
+### Q19. Increment Operator
+
+```js
+let a = 5;
+a++;
+console.log(a);
+```
+
+Output:
+
+```
+6
+```
+
+---
+
+### Q20. Comments
+
+Single-line:
+
+```js
+// comment
+```
+
+Multi-line:
+
+```js
+/* comment */
+```
+
+---
+
+## 🟡 INTERMEDIATE LEVEL (21–35)
+
+### Q21. Scope
+
+Block scope means variables declared with `let` and `const` exist only inside `{}`.
+
+---
+
+### Q22. Hoisting
+
+Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before execution.
+
+---
+
+### Q23. Undefined vs Null
+
+`undefined` → Variable declared but not assigned.
+`null` → Intentional absence of value.
+
+---
+
+### Q24. Truthy & Falsy
+
+Falsy values:
+
+* false
+* 0
+* -0
+* 0n
+* ""
+* null
+* undefined
+* NaN
+
+---
+
+### Q25. Functions vs Arrow Functions
+
+Arrow functions:
+
+* Shorter syntax
+* No own `this`
+* Cannot be used as constructors
+
+---
+
+### Q26. Parameters vs Arguments
+
+Parameters → Variables in function definition.
+Arguments → Values passed during function call.
+
+---
+
+### Q27. Return Keyword
+
+If a function does not return anything, it returns `undefined`.
+
+---
+
+### Q28. Array Methods
+
+`push()` → Adds element to end.
+`pop()` → Removes element from end.
+
+---
+
+### Q29. Loop vs Array Methods
+
+Use loops when you need complex control flow or break/continue.
+
+---
+
+### Q30. Object Iteration
+
+```js
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+```
+
+---
+
+### Q31. Break & Continue
+
+`break` → Stops loop completely.
+`continue` → Skips current iteration.
+
+---
+
+### Q32. Comparison Operators
+
+```js
+console.log(0 == false);
+console.log(0 === false);
+```
+
+Output:
+
+```
+true
+false
+```
+
+---
+
+### Q33. Ternary Operator
+
+```js
+status = age >= 18 ? 'adult' : status;
+```
+
+---
+
+### Q34. Array Destructuring
+
+Extracting values from arrays into variables.
+
+```js
+const [a, b] = [1, 2];
+```
+
+---
+
+### Q35. Spread Operator
+
+Expands elements of an array.
+
+```js
+const newArr = [...arr];
+```
+
+---
+
+## 🔵 ADVANCED LEVEL (36–50)
+
+### Q36. Closures
+
+A closure is when a function remembers variables from its outer scope.
+
+```js
+function outer() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  }
+}
+```
+
+---
+
+### Q37. Execution Context
+
+The environment in which JavaScript code is evaluated and executed.
+
+---
+
+### Q38. Call Stack
+
+A stack data structure that tracks function calls.
+
+---
+
+### Q39. Pass by Value vs Reference
+
+Primitives → Pass by value.
+Objects/Arrays → Pass by reference.
+
+---
+
+### Q40. Shallow vs Deep Copy
+
+Shallow copy → Copies first level only.
+Deep copy → Copies all nested levels.
+
+---
+
+### Q41. Higher-Order Functions
+
+A function that takes another function as argument or returns one.
+
+---
+
+### Q42. Callback Functions
+
+A function passed into another function to be executed later.
+
+---
+
+### Q43. Immutability
+
+Prevents unexpected side effects and makes debugging easier.
+
+---
+
+### Q44. Event Loop
+
+Handles asynchronous operations by moving callbacks from queue to call stack when it is empty.
+
+---
+
+### Q45. Synchronous vs Asynchronous
+
+Synchronous → Executes line by line.
+Asynchronous → Executes without blocking.
+
+---
+
+### Q46. forEach vs map
+
+`forEach()` → Executes function, returns undefined.
+`map()` → Returns new transformed array.
+
+---
+
+### Q47. == Interview Trap ⭐
+
+```js
+console.log([] == []);
+```
+
+Output:
+
+```
+false
+```
+
+(Because they are different references.)
+
+---
+
+### Q48. typeof Interview Trap ⭐
+
+```js
+console.log(typeof null);
+```
+
+Output:
+
+```
+"object"
+```
+
+---
+
+### Q49. NaN Check
+
+```js
+Number.isNaN(value);
+```
+
+---
+
+### Q50. FINAL INTERVIEW QUESTION ⭐⭐⭐
+
+1. Global Execution Context is created.
+2. Memory phase (variables/functions stored).
+3. Code execution phase (line by line).
+4. Functions create new execution contexts.
+5. Call stack manages execution order.
+6. Event loop handles asynchronous callbacks.
+
+---
+
+# ✅ End of File
